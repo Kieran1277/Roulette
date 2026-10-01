@@ -38,8 +38,11 @@ int main() {
     
     if (playerResult == colorResult) {
         cout << "You Win!" << endl;
-    } else {
+    } else if (playerResult == colorResult) {
         cout << "You Lose :(" << endl;
+    } else {
+        cout << "Type R or B, Case Sensitive";
+        exit(0);
     }
     
     main();
