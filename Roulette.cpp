@@ -6,7 +6,6 @@
 #include <ctime>
 #include <random>
 
-
 using namespace std; 
 
 int main() {
@@ -18,6 +17,11 @@ int main() {
     cout << "Red (R) or Black (B)? ";
     string playerChoice;
     cin >> playerChoice;
+
+    if (playerChoice != "R" && playerChoice != "B") {
+        cout << "Type R or B, Case Sensitive";
+        exit(0);
+    }
 
     int colorResult = wheelChoice(gen); 
     
@@ -38,7 +42,7 @@ int main() {
     
     if (playerResult == colorResult) {
         cout << "You Win!" << endl;
-    } else if (playerResult != colorResult) {
+    } else if (playerResult != colorResult && (colorResult == 1 || colorResult == 2)) {
         cout << "You Lose :(" << endl;
     } else {
         cout << "Type R or B, Case Sensitive";
